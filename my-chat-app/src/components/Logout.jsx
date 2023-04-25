@@ -8,7 +8,7 @@ const Logout = () => {
         const handleLogOut = async () => {
           localStorage.clear();
           Cookies.remove('authToken');
-          Navigate('/login');
+          Navigate('/');
         }
   return (
     <div>

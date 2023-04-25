@@ -66,7 +66,7 @@ if (isLoginPage) {
           localStorage.setItem('avatarImage', data.user.avatarImage)
           toast.success('Log In Successful! Please wait.', toastOptions);
           await new Promise(resolve => setTimeout(resolve, 3000));
-          navigate("/");
+          navigate("/chat");
         } else {
           // If avatar image is not set, navigate to setAvatar
           toast.success('Log In Successful! Navigating to set Avatar.', toastOptions);
