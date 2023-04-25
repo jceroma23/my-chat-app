@@ -1,12 +1,30 @@
 {
     "version": 2,
     "builds": [
-      { "src": "*.js", 
-      "use": "@vercel/node" }
+      {
+        "src": "my-chat-app/dist/**",
+        "use": "@vercel/static-build",
+        "config": {
+          "basePath": "/client"
+        }
+      },
+      {
+        "src": "server/**/*.js",
+        "use": "@vercel/node"
+      }
     ],
-     "routes": [
-          { "src": "/(.*)", 
-          "dest": "/" }
-    ]  
-}
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "server/api/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "client/$1",
+        "headers": {
+          "cache-control": "s-maxage=1, stale-while-revalidate"
+        }
+      }
+    ]
+  }
   
