@@ -8,7 +8,7 @@
   "routes": [
     { 
       "src": "/api/auth/(.*)", 
-      "dest": "http://localhost:5000/api/auth/$1",
+      "dest": "http://localhost:5000/api/auth/$1"
     },
     { 
       "src": "/api/(.*)", 
