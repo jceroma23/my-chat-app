@@ -25,6 +25,7 @@ app.use("/api/messages", messageRoutes);
 // Add CORS headers middleware function
 app.use(cors({
   origin: ['https://my-chat-ldlavbet3-jceroma23.vercel.app/',
+  'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
    'https://my-chat-app-plum.vercel.app/',
    'https://my-chat-app-git-main-jceroma23.vercel.app/',
    'https://my-chat-ldlavbet3-jceroma23.vercel.app/'],
@@ -35,6 +36,7 @@ app.use(cors({
 
 app.options('*', cors({
   origin: ['https://my-chat-ldlavbet3-jceroma23.vercel.app/',
+  'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
    'https://my-chat-app-plum.vercel.app/',
    'https://my-chat-app-git-main-jceroma23.vercel.app/',
    'https://my-chat-ldlavbet3-jceroma23.vercel.app/'],
