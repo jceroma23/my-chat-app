@@ -9,7 +9,7 @@ import Contacts from '../components/Contacts';
 import Welcome from '../components/Welcome';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ChatContainer from '../components/chatContainer';
+import ChatC from '../components/chatContainer';
 
 const Chat = () => {
    // Get the token from the cookie and decode Token
@@ -111,7 +111,7 @@ const Chat = () => {
             <Welcome />
             ) : (
               <div className='p-1 w-full h-full'>
-                <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket} />
+                <ChatC currentChat={currentChat} currentUser={currentUser} socket={socket} />
               </div>
             )}
           </div>

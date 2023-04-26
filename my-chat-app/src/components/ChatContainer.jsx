@@ -5,7 +5,7 @@ import axios from "axios";
 import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
 import { v4 as uuidv4 } from "uuid";
 
-const ChatContainer = ({ currentChat, currentUser, socket }) => {
+const ChatC = ({ currentChat, currentUser, socket }) => {
   const [loading, setLoading] = useState(true);
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
@@ -127,4 +127,4 @@ const ChatContainer = ({ currentChat, currentUser, socket }) => {
   )
 }
 
-export default ChatContainer
+export default ChatC
