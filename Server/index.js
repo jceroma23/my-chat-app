@@ -33,6 +33,16 @@ app.use(cors({
   credentials: true
 }));
 
+app.options('*', cors({
+  origin: ['https://my-chat-ldlavbet3-jceroma23.vercel.app/',
+   'https://my-chat-app-plum.vercel.app/',
+   'https://my-chat-app-git-main-jceroma23.vercel.app/',
+   'https://my-chat-ldlavbet3-jceroma23.vercel.app/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
