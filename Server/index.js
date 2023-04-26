@@ -22,6 +22,20 @@ app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoutes);
 
 
+// Add CORS headers middleware function
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+
 
 //connection
 // MongoDB
@@ -43,7 +57,7 @@ const server = app.listen(process.env.PORT, () => {
 // socket.io
 const io = socket(server, {
     cors: {
-      origin: ["http://localhost:3000", "http://localhost:5173"],
+      origin: ["http://localhost:3000", "http://localhost:5173" ],
       credentials: true,
     },
   });
