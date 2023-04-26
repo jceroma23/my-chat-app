@@ -7,10 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { allUsersRoute, host } from "../utils/APIRoutes"
 import Contacts from '../components/Contacts';
 import Welcome from '../components/Welcome';
-import ChatContainer from '../components/chatContainer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import ChatContainer from '../components/chatContainer';
 
 const Chat = () => {
    // Get the token from the cookie and decode Token
@@ -87,7 +86,7 @@ const Chat = () => {
   
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
-    console.log('this is the chatchange', chat);
+    console.log('Chatchange', chat);
   };
 
    return (
