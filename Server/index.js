@@ -65,10 +65,11 @@ const server = app.listen(process.env.PORT, () => {
 // socket.io
 const io = socket(server, {
     cors: {
-      origin: ['https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+      origin: [
       'https://my-chat-app-plum.vercel.app/',
-      'https://my-chat-app-git-main-jceroma23.vercel.app/',
-      'http://localhost:5000'],
+      'https://my-chat-app-plum.vercel.app/api/auth/*',
+      'https://my-chat-app-plum.vercel.app/api/messages/*',
+      'http://localhost:5000/'],
       credentials: true,
     },
   });
