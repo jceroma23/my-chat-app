@@ -4,12 +4,13 @@
       "src": "server.js",
       "use": "@vercel/node"
     }
+    
   ],
   "routes": [
     { 
       "src": "/api/(.*)", 
       "dest": "http://localhost:5000/api/$1",
-      "methods": ["GET", "POST", "OPTIONS" ],
+      "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE" ],
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'",
@@ -19,7 +20,7 @@
     },
     { 
       "src": "/(.*)", 
-      "dest": "/my-chat-app/index.html"
+      "dest": "https://my-chat-app-plum.vercel.app/"
     }
   ]
 }
