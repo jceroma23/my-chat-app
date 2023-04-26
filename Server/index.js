@@ -23,45 +23,27 @@ app.use("/api/messages", messageRoutes);
 
 
 // Add CORS headers middleware function
-app.use(cors({
-  origin: [
-  'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
-   'https://my-chat-app-plum.vercel.app/',
-   'https://my-chat-app-git-main-jceroma23.vercel.app/'],
+// app.use(cors({
+//   origin: [
+//   'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+//    'https://my-chat-app-plum.vercel.app/',
+//    'https://my-chat-app-git-main-jceroma23.vercel.app/'],
   
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true
+// }));
 
-app.options('*', cors({
-  origin: [
-    'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
-     'https://my-chat-app-plum.vercel.app/',
-     'https://my-chat-app-git-main-jceroma23.vercel.app/'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
+// app.options('*', cors({
+//   origin: [
+//     'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+//      'https://my-chat-app-plum.vercel.app/',
+//      'https://my-chat-app-git-main-jceroma23.vercel.app/'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true
+// }));
 
-
-// Add the allowCors middleware function here
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  )
-  if (req.method === 'OPTIONS') {
-    res.status(200).end()
-    return
-  }
-  return await fn(req, res)
-}
 
 //connection
 // MongoDB
@@ -78,7 +60,7 @@ const server = app.listen(process.env.PORT, () => {
     console.log('Server Running on Port ${process.env.PORT}');
 })
 
-app.use(allowCors);
+
 
 // socket.io
 const io = socket(server, {
