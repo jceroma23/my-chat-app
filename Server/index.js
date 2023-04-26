@@ -23,26 +23,25 @@ app.use("/api/messages", messageRoutes);
 
 
 // Add CORS headers middleware function
-// app.use(cors({
-//   origin: [
-//   'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
-//    'https://my-chat-app-plum.vercel.app/',
-//    'https://my-chat-app-git-main-jceroma23.vercel.app/'],
-  
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: [
+  'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+   'https://my-chat-app-plum.vercel.app/',
+   'https://my-chat-app-git-main-jceroma23.vercel.app/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
-// app.options('*', cors({
-//   origin: [
-//     'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
-//      'https://my-chat-app-plum.vercel.app/',
-//      'https://my-chat-app-git-main-jceroma23.vercel.app/'],
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true
-// }));
+app.options('*', cors({
+  origin: [
+    'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+     'https://my-chat-app-plum.vercel.app/',
+     'https://my-chat-app-git-main-jceroma23.vercel.app/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 
 //connection
