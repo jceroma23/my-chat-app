@@ -6,21 +6,11 @@
     }
     
   ],
-  "routes": [
-    { 
-      "src": "/api/(.*)", 
-      "dest": "http://localhost:5000/api/$1",
-      "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE" ],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-        "Access-Control-Expose-Headers": "Content-Type, Authorization"
-      }
-    },
-    { 
-      "src": "/(.*)", 
-      "dest": "https://my-chat-app-plum.vercel.app/"
-    }
-  ]
+  
+    "routes": [
+      
+      { "src": "/(.*)",
+       "dest": "/" }
+    ]
+  
 }
