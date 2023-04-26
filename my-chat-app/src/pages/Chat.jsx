@@ -9,7 +9,7 @@ import Contacts from '../components/Contacts';
 import Welcome from '../components/Welcome';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ChatC from '../components/chatContainer';
+import ChatC from '../components/ChatC';
 
 const Chat = () => {
    // Get the token from the cookie and decode Token
