@@ -7,19 +7,15 @@
   ],
   "routes": [
     { 
-      "src": "/api/auth/(.*)", 
-      "dest": "http://localhost:5000/api/auth/$1",
+      "src": "/api/(.*)", 
+      "dest": "http://localhost:5000/api/$1",
       "methods": ["GET", "POST", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Expose-Headers": "Content-Type, Authorization"
       }
-    },
-    { 
-      "src": "/api/(.*)", 
-      "dest": "http://localhost:5000/api/$1",
-      "methods": ["GET", "POST", "OPTIONS"]
     },
     { 
       "src": "/(.*)", 
