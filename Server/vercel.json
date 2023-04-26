@@ -6,7 +6,6 @@
       }
     ],
     "routes": [
-      { "handle": "filesystem" },
       { "src": "/api/(.*)", "dest": "http://localhost:5000/api/$1" },
       { "src": "/(.*)", "dest": "my-chat-app/index.html" }
     ]
