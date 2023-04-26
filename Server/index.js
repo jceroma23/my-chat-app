@@ -24,22 +24,21 @@ app.use("/api/messages", messageRoutes);
 
 // Add CORS headers middleware function
 app.use(cors({
-  origin: ['https://my-chat-ldlavbet3-jceroma23.vercel.app/',
+  origin: [
   'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
    'https://my-chat-app-plum.vercel.app/',
-   'https://my-chat-app-git-main-jceroma23.vercel.app/',
-   'https://my-chat-ldlavbet3-jceroma23.vercel.app/'],
+   'https://my-chat-app-git-main-jceroma23.vercel.app/'],
+  
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 
 app.options('*', cors({
-  origin: ['https://my-chat-ldlavbet3-jceroma23.vercel.app/',
-  'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
-   'https://my-chat-app-plum.vercel.app/',
-   'https://my-chat-app-git-main-jceroma23.vercel.app/',
-   'https://my-chat-ldlavbet3-jceroma23.vercel.app/'],
+  origin: [
+    'https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+     'https://my-chat-app-plum.vercel.app/',
+     'https://my-chat-app-git-main-jceroma23.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -84,7 +83,10 @@ app.use(allowCors);
 // socket.io
 const io = socket(server, {
     cors: {
-      origin: ["http://localhost:3000", "http://localhost:5173" ],
+      origin: ['https://my-chat-i0f8tmbbi-jceroma23.vercel.app/',
+      'https://my-chat-app-plum.vercel.app/',
+      'https://my-chat-app-git-main-jceroma23.vercel.app/',
+      'http://localhost:5000'],
       credentials: true,
     },
   });
