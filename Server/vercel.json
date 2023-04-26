@@ -9,10 +9,10 @@
     { 
       "src": "/api/(.*)", 
       "dest": "http://localhost:5000/api/$1",
-      "methods": ["GET", "POST", "OPTIONS"],
+      "methods": ["GET", "POST", "OPTIONS" ],
       "headers": {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Methods": "'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Expose-Headers": "Content-Type, Authorization"
       }
